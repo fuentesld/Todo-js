@@ -20,7 +20,6 @@ export const crearTodoHtml = (todo)=>{
   const div = document.createElement('div')
   div.innerHTML = htmlTodo
   ulTodoList.append(div.firstElementChild)
-
   return div.firstElementChild
 }
 
@@ -37,7 +36,6 @@ ulTodoList.addEventListener('click', (event) => {
   const nombreElemento = event.target.localName
   const todoElemento = event.target.parentElement.parentElement
   const todoId = todoElemento.getAttribute('data-id')
-  console.log(nombreElemento);
   if (nombreElemento.includes('input')){
     todoList.marcarCompletado(todoId)
     todoElemento.classList.toggle('completed')
